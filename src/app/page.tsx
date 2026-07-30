@@ -1,17 +1,13 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   const recentPosts = getAllPosts().slice(0, 3);
 
   return (
     <div className="space-y-10">
-      <section>
-        <h1 className="text-3xl font-bold tracking-tight">The Wired Palate</h1>
-        <p className="mt-3 text-neutral-600">
-          Welcome. This is where new writing shows up first.
-        </p>
-      </section>
+      <Hero />
 
       <section>
         <h2 className="text-xl font-semibold">Recent posts</h2>
