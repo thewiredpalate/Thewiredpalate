@@ -114,7 +114,7 @@ export function AnimatedNav() {
       >
         <motion.div
           variants={logoVariants}
-          className="flex flex-shrink-0 items-center whitespace-nowrap pl-4 pr-2 font-display text-sm font-semibold text-ink"
+          className="flex flex-shrink-0 items-center whitespace-nowrap pl-4 pr-2 font-script text-xl font-semibold text-ink"
         >
           The Wired Palate
         </motion.div>
