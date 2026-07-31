@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Dancing_Script, Fraunces, Work_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import { AnimatedNav } from "@/components/AnimatedNav";
 import Footer from "@/components/Footer";
 
 const bebasNeue = Bebas_Neue({
@@ -44,7 +44,7 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${dancingScript.variable} ${fraunces.variable} ${workSans.variable}`}
     >
       <body className="flex min-h-screen flex-col bg-paper font-sans text-ink">
-        <Header />
+        <AnimatedNav />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

@@ -28,7 +28,7 @@ export default async function BlogPost({
   }
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-10">
+    <article className="mx-auto max-w-3xl px-4 pb-10 pt-28">
       <h1 className="text-2xl font-bold tracking-tight">{post.title}</h1>
       <p className="mt-2 text-sm text-neutral-500">{post.date}</p>
       <div className="prose mt-6 max-w-none text-neutral-800">
