@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 
 const pillars = [
   {
@@ -35,6 +35,20 @@ const pillars = [
   },
 ];
 
+const textContainer: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.15 } },
+};
+
+const textItem: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
 function PillarItem({
   pillar,
   reversed,
@@ -47,21 +61,26 @@ function PillarItem({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [-24, 24]);
+  const y = useTransform(scrollYProgress, [0, 1], [-32, 32]);
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`grid grid-cols-1 items-center gap-8 sm:gap-12 lg:grid-cols-2 ${
         reversed ? "lg:[&>*:first-child]:order-2" : ""
       }`}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
-        <motion.div style={{ y }} className="absolute inset-[-8%]">
+      <motion.div
+        initial={{ clipPath: "inset(0 100% 0 0)" }}
+        whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.65, 0, 0.35, 1] }}
+        className="group relative aspect-[4/3] w-full overflow-hidden rounded-sm"
+      >
+        <motion.div
+          style={{ y }}
+          className="absolute inset-[-8%] transition-transform duration-500 ease-out group-hover:scale-105"
+        >
           <Image
             src={pillar.image}
             alt={pillar.alt}
@@ -70,30 +89,46 @@ function PillarItem({
             className="object-cover"
           />
         </motion.div>
-      </div>
+      </motion.div>
 
-      <div className={reversed ? "lg:pl-4" : "lg:pr-4"}>
-        <div className="flex items-center gap-2">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={textContainer}
+        className={reversed ? "lg:pl-4" : "lg:pr-4"}
+      >
+        <motion.div variants={textItem} className="flex items-center gap-2">
           <span className={`h-2 w-2 rounded-full ${pillar.swatchClass}`} />
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50">
             {pillar.eyebrow}
           </p>
-        </div>
+        </motion.div>
 
-        <h3 className="font-display mt-4 text-3xl font-medium tracking-tight text-ink sm:text-4xl">
-          {pillar.headline}
-        </h3>
-
-        <p className="mt-4 max-w-md text-ink/70">{pillar.copy}</p>
-
-        <Link
-          href="/blog"
-          className="mt-6 inline-block text-sm font-medium text-ink underline decoration-ink/30 underline-offset-4 transition hover:decoration-ink"
+        <motion.h3
+          variants={textItem}
+          className="font-display mt-4 text-3xl font-medium tracking-tight text-ink sm:text-4xl"
         >
-          {pillar.linkLabel} →
-        </Link>
-      </div>
-    </motion.div>
+          {pillar.headline}
+        </motion.h3>
+
+        <motion.p variants={textItem} className="mt-4 max-w-md text-ink/70">
+          {pillar.copy}
+        </motion.p>
+
+        <motion.div variants={textItem}>
+          <Link
+            href="/blog"
+            className="group/link mt-6 inline-flex items-center gap-1 text-sm font-medium text-ink decoration-ink/30 underline-offset-4 hover:underline hover:decoration-ink"
+          >
+            {pillar.linkLabel}
+            <span className="transition-transform group-hover/link:translate-x-1">
+              →
+            </span>
+          </Link>
+        </motion.div>
+      </motion.div>
+    </div>
   );
 }
 
