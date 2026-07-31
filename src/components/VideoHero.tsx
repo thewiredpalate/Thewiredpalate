@@ -57,7 +57,7 @@ export default function VideoHero() {
           <br />
           <WordsPullUp
             text="Palate"
-            className="bg-gradient-to-r from-rose-300 via-red-400 to-rose-500 bg-clip-text text-transparent"
+            className="font-script normal-case tracking-normal bg-gradient-to-r from-rose-300 via-red-400 to-rose-500 bg-clip-text text-transparent"
           />
         </h1>
 

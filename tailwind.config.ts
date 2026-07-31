@@ -19,6 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         hero: ["var(--font-hero)"],
+        script: ["var(--font-script)"],
         display: ["var(--font-display)"],
         sans: ["var(--font-sans)"],
       },

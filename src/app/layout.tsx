@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Fraunces, Work_Sans } from "next/font/google";
+import { Bebas_Neue, Dancing_Script, Fraunces, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +8,12 @@ const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-hero",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-script",
 });
 
 const fraunces = Fraunces({
@@ -35,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bebasNeue.variable} ${fraunces.variable} ${workSans.variable}`}
+      className={`${bebasNeue.variable} ${dancingScript.variable} ${fraunces.variable} ${workSans.variable}`}
     >
       <body className="flex min-h-screen flex-col bg-paper font-sans text-ink">
         <Header />
