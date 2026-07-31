@@ -28,9 +28,36 @@ const workSans = Work_Sans({
   variable: "--font-sans",
 });
 
+const siteDescription =
+  "Food, lifestyle, and technology writing from the Philippines — restaurant guides, coworking and coffee shop reviews, and dev notes from Metro Manila and beyond.";
+
 export const metadata: Metadata = {
-  title: "The Wired Palate",
-  description: "Thoughts, stories, and writing from The Wired Palate.",
+  metadataBase: new URL("https://www.thewiredpalate.com"),
+  title: {
+    default: "The Wired Palate",
+    template: "%s — The Wired Palate",
+  },
+  description: siteDescription,
+  keywords: [
+    "Philippines food blog",
+    "Manila lifestyle blog",
+    "Metro Manila coworking",
+    "Filipino tech blog",
+    "Philippines digital nomad",
+  ],
+  openGraph: {
+    title: "The Wired Palate",
+    description: siteDescription,
+    url: "/",
+    siteName: "The Wired Palate",
+    locale: "en_PH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Wired Palate",
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({

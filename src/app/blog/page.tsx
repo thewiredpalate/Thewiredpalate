@@ -2,7 +2,9 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata = {
-  title: "Blog — The Wired Palate",
+  title: "Blog",
+  description:
+    "Food, lifestyle, and technology articles from the Philippines — restaurant guides, coworking reviews, and dev notes from Metro Manila and beyond.",
 };
 
 export default function BlogIndex() {
