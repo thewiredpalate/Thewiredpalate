@@ -9,7 +9,7 @@ export default function BlogIndex() {
   const posts = getAllPosts();
 
   return (
-    <div>
+    <div className="mx-auto max-w-3xl px-4 py-10">
       <h1 className="text-2xl font-bold tracking-tight">Blog</h1>
       <ul className="mt-6 space-y-6">
         {posts.map((post) => (

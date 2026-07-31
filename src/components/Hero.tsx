@@ -3,7 +3,7 @@ import CoffeeCup from "./CoffeeCup";
 
 export default function Hero() {
   return (
-    <section className="-mx-4 -mt-10 rounded-b-3xl bg-neutral-950 px-4 py-16 text-center text-white sm:px-8">
+    <section className="bg-neutral-950 px-4 py-16 text-center text-white sm:px-8">
       <CoffeeCup />
 
       <p className="mt-2 text-xs font-medium uppercase tracking-[0.3em] text-neutral-400">
