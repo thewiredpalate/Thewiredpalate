@@ -1,7 +1,7 @@
 import { getAllPosts } from "@/lib/posts";
 import VideoHero from "@/components/VideoHero";
-import PillarsSticky from "@/components/home/PillarsSticky";
-import StatsMarquee from "@/components/home/StatsMarquee";
+import PaletteStrip from "@/components/home/PaletteStrip";
+import Pillars from "@/components/home/Pillars";
 import RevealPosts from "@/components/home/RevealPosts";
 import NewsletterCta from "@/components/home/NewsletterCta";
 
@@ -11,8 +11,9 @@ export default function Home() {
   return (
     <div>
       <VideoHero />
-      <StatsMarquee />
-      <PillarsSticky />
+      <PaletteStrip />
+      <Pillars />
+      <PaletteStrip />
       <RevealPosts posts={recentPosts} />
       <NewsletterCta />
     </div>

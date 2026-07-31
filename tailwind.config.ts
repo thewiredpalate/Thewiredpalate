@@ -8,8 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        ink: "#14110F",
+        paper: "#F7F3EC",
+        palate: {
+          food: "#D89B3C",
+          lifestyle: "#B98A8F",
+          tech: "#3C5A73",
+        },
+      },
       fontFamily: {
         hero: ["var(--font-hero)"],
+        display: ["var(--font-display)"],
+        sans: ["var(--font-sans)"],
       },
     },
   },

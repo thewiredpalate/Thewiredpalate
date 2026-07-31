@@ -69,7 +69,7 @@ const itemVariants: Variants = {
 
 export default function Footer() {
   return (
-    <footer className="mt-16 w-full overflow-hidden bg-white py-12 text-neutral-900">
+    <footer className="mt-16 w-full overflow-hidden bg-paper py-12 text-ink">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -115,7 +115,7 @@ export default function Footer() {
       </motion.div>
 
       <motion.div
-        className="h-10 w-full border-y border-neutral-900 opacity-10"
+        className="h-10 w-full border-y border-ink opacity-10"
         style={{
           backgroundImage:
             "repeating-linear-gradient(315deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%)",
