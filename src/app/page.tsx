@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/posts";
 import VideoHero from "@/components/VideoHero";
+import PinnedIntro from "@/components/home/PinnedIntro";
 import PaletteStrip from "@/components/home/PaletteStrip";
 import Pillars from "@/components/home/Pillars";
 import RevealPosts from "@/components/home/RevealPosts";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <div>
       <VideoHero />
+      <PinnedIntro />
       <PaletteStrip />
       <Pillars />
       <PaletteStrip />
