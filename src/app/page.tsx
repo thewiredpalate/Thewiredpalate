@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/posts";
-import Hero from "@/components/Hero";
+import OrbitHeroLoader from "@/components/OrbitHeroLoader";
 import PillarsSticky from "@/components/home/PillarsSticky";
 import StatsMarquee from "@/components/home/StatsMarquee";
 import RevealPosts from "@/components/home/RevealPosts";
@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div>
-      <Hero />
+      <OrbitHeroLoader />
       <StatsMarquee />
       <PillarsSticky />
       <RevealPosts posts={recentPosts} />
