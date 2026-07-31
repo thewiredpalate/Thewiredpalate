@@ -9,9 +9,9 @@ interface OrbitSphereProps {
   images: string[];
 }
 
-const PARTICLE_COUNT = 400;
-const PARTICLE_SIZE_MIN = 0.02;
-const PARTICLE_SIZE_MAX = 0.045;
+const PARTICLE_COUNT = 1400;
+const PARTICLE_SIZE_MIN = 0.006;
+const PARTICLE_SIZE_MAX = 0.016;
 const SPHERE_RADIUS = 9;
 const POSITION_RANDOMNESS = 4;
 const ROTATION_SPEED_Y = 0.0006;
@@ -58,7 +58,7 @@ function Particles() {
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, PARTICLE_COUNT]}>
       <sphereGeometry args={[1, 6, 5]} />
-      <meshBasicMaterial color="#ffffff" />
+      <meshBasicMaterial color="#f4c873" />
     </instancedMesh>
   );
 }
