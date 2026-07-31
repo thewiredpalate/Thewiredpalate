@@ -41,13 +41,13 @@ export default function VideoHero() {
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover opacity-60"
         src="/videos/hero.mp4"
       />
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/70" />
 
-      <div className="relative flex h-full flex-col items-center justify-end px-6 pb-20 text-center">
+      <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
         <p className="text-xs font-medium uppercase tracking-[0.4em] text-neutral-300">
           Food &middot; Lifestyle &middot; Technology
         </p>
