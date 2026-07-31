@@ -35,11 +35,6 @@ function Particles() {
       list.push({
         position: [x, y, z] as [number, number, number],
         scale: Math.random() * (PARTICLE_SIZE_MAX - PARTICLE_SIZE_MIN) + PARTICLE_SIZE_MIN,
-        color: new THREE.Color().setHSL(
-          Math.random() * 0.08 + 0.05,
-          0.75,
-          0.55 + Math.random() * 0.25,
-        ),
       });
     }
 
@@ -56,16 +51,14 @@ function Particles() {
       dummy.scale.setScalar(particle.scale);
       dummy.updateMatrix();
       mesh.setMatrixAt(i, dummy.matrix);
-      mesh.setColorAt(i, particle.color);
     });
     mesh.instanceMatrix.needsUpdate = true;
-    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
   }, [particles]);
 
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, PARTICLE_COUNT]}>
       <sphereGeometry args={[1, 6, 5]} />
-      <meshBasicMaterial vertexColors />
+      <meshBasicMaterial color="#ffffff" />
     </instancedMesh>
   );
 }

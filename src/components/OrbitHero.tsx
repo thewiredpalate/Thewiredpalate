@@ -29,7 +29,7 @@ export default function OrbitHero() {
         <h1 className="font-hero mx-auto mt-4 max-w-4xl text-center text-6xl uppercase leading-[0.9] tracking-wide text-white sm:text-7xl md:text-8xl">
           The Wired
           <br />
-          <span className="bg-gradient-to-r from-amber-300 via-orange-300 to-pink-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-rose-300 via-red-400 to-rose-500 bg-clip-text text-transparent">
             Palate
           </span>
         </h1>
